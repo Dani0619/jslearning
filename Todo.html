@@ -1,0 +1,21 @@
+<input id="to">
+<button onclick="update()">ADD</button>
+<ul id="items">
+    <li>Write your tasks Here
+        <button onclick="deleteitem(event)">Delete</button>
+    </li>
+</ul>
+<script>
+    //selecting ul tag
+    var items=document.getElementById("items")
+    //selecting input tag
+    var to=document.getElementById("to")
+    function update(){
+        var list=document.createElement("li")
+        list.innerHTML=to.value + "    <button onclick='deleteitem(event)'>Delete</button>"
+        items.append(list)
+    }
+    function deleteitem(event){
+        event.target.parentElement.remove()
+    }
+</script>
